@@ -7,6 +7,13 @@ int Prompt(string message)
     int result = int.Parse(ReadValue);
     return result;
 }
+
+int Second_num(int value_in)
+{
+    int result_num = ((value_in - (value_in % 10)) / 10) % 10;
+    return result_num;
+}
+
 int value_01 = Prompt("Введите положительное трехзначное число (от 100 до 999) -> ");
 if ((value_01 > 999) | (value_01 < 100))
 {
@@ -14,6 +21,5 @@ if ((value_01 > 999) | (value_01 < 100))
 }
 else
 {
-    int result_num = ((value_01 - (value_01 % 10)) / 10) % 10;
-    System.Console.Write($"Вторая цифра -> {result_num}");
+    System.Console.Write($"Вторая цифра -> {Second_num(value_01)}");
 }
